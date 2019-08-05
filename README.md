@@ -32,6 +32,8 @@ Non Zip files may contain this naming pattern as well.
 
 There is a large number of configuration files for popular credential stuffing tools, SentryMBA, BlackBullet, AIOC, Woxy and Storm.
 
+There is also a large number of YouTube view bots and various ad fraud tools for YouTube.
+
 ## Contributing ## 
 
 Contributions to this repo are welcome. Simply fork this repo, open a pull request and consult with the repo maintainers about it. 
