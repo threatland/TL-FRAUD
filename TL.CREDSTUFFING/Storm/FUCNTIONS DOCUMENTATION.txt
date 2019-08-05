@@ -1,0 +1,257 @@
+Supported Encoding Methods:
+	* URLEncode / URLDecode
+		~ Description: Encode/Decode an String
+		- 'URLEncode' Usage: urlencode(strToEncode)
+		- 'URLDecode' Usage: urldecode(strToDecode)
+		+ Parameters:
+			++ strToEncode: The string/text to be Encoded
+			++ strToDecode: The string/text to be Decoded
+			
+	* Base64 Encode/Decode
+		~ Description: Base64 Encode/Decode an String
+		- 'Base64Encode' Usage: base64encode(strToEncode)
+		- 'Base64Decode' Usage: base64decode(strToDecode)
+		+ Parameters:
+			++ strToEncode: The string/text to be Encoded
+			++ strToDecode: The string/text to be Decoded
+
+			
+String-related Functions:
+	* Uppercase / Lowercase
+		~ Description: Upper/Lower each char of String/Text/Source
+		- 'Uppercase' Usage: uppercase(strToUpper)
+		- 'Lowercase' Usage: lowercase(strToLower)
+		+ Parameters:
+			++ strToUpper: The string/text to convert each char to Uppercase
+			++ strToLower: The string/text to convert each char to Lowercase
+			
+	* Length
+		~ Description: Gets the number of characters in the provided String/Text/Source
+		- 'Length' Usage: len(Source)
+		+ Parameters:
+			++ Source: The base String/Text/Source to Gets the number of characters in.
+		
+	* Trim / TrimStart / TrimEnd
+		~ Description: Trim And Replace Spaces at Start/End or Both part of an String/Text/Source
+		- 'Trim' Usage: trim(Source)
+		- 'TrimStart' Usage: trimstart(Source)
+		- 'TrimEnd' Usage: trimend(Source)
+		+ Parameters:
+			++ Source: The String/Text or Source to get Trimmed.
+			
+	* Replace
+		~ Description: Replace an string/text/word with an string/text/word
+		- 'Replace' Usage: replace(Source, ToFind, ToReplaceWith, [Optional] StartFrom = 1, [Optional] Count = -1)
+		+ Parameters:
+			++ Source: The base String/Text/Source to Find and Replace the texts in.
+			++ ToFind: An String/Text to search for and replace
+			++ ToReplaceWith: An String/Text To replace with the found String/Text
+			++ StartFrom: [Optional] A Number/Integer to determine the start position of source. Default is 1
+			++ Count: [Optional] Maximum count of allowed matches to be replaced. Default is 1
+		
+	* Substring
+		~ Description: Extract an string/text by providing start index and optionally length to be extracted till.
+		- 'Substring' Usage: substring(Source, StartIndex, [Optional] Length)
+		+ Parameters:
+			++ Source: The base String/Text/Source to extract string/text from
+			++ StartIndex: A Number/Integer that determine the index to start extracting texts from
+			++ Length: [Optional] A Number/Integer that determine the maximum length that the function is allowed to extract, Default is MAX
+			
+	*  CombineText
+		~ Description: Combine/Merge several strings/texts, merge order will be the order of provided arguemnets
+		- 'CombineText' Usage: combinetext(Params strings)
+		+ Parameters:
+			++ strings: Multiple strings/texts/variables to merge them, multiple parameters example: combinetext("Coded By ", "MR.ViPER", "@", "Cracking.Org") and the result will be: "Coded By MR.ViPER@Cracking.Org"
+		
+	* IndexOf
+		~ Description: Return index of an string/text in in base String/Text/Source
+		- 'IndexOf' Usage: indexof(Source, ToFind, [Optional] StartIndex, [Optional] Count)
+		+ Parameters:
+			++ Source: The base String/Text/Source to search for the String/Word/Text in.
+			++ ToFind: The String/Word/Text to search in the Source
+			++ StartIndex: [Optional] A Number/Integer that determine the position to start searching from.
+			++ Count: [Optional] A Number/Integer that determine The number of character positions to examine.
+		
+	* Add
+		~ Description: Add an String/Text to the left provided arguement(s)
+		- 'Add' Usage: source + ToAddValue
+		+ Parameters:
+			++ Source: The first String/Text/Number to add new values in.
+			++ ToAddValue: An String/Text/Number to Add after the Source.
+		
+	* FindTagVal
+		~ Description: Get/Extract text between two strings/word/texts
+		- 'FindTagVal' Usage: findtagval(Source, StartString, [Optional] EndString, [Optional] Delimiter = null)
+		+ Parameters:
+			++ Source: The base String/Text/Source to Extract texts from
+			++ StartString: The start of string that you want to extract text (will not be included in result)
+			++ EndString: [Optional] The End of string that you want to extract text (will not be included in result), by default, will extract to end.
+			++ Delimiter: [Optional] If you want to extract multiple matches, Put a Delimiter like "|" so it will split each match with a "|" between. By Default will only return first match and no delimiters.
+			
+	* RegexMatch
+		~ Description: Get/Extract Text matched by the provided Regex .NET Based Pattern
+		- 'RegexMatch' Usage: regexmatch(Source, Pattern, [Optional] RegexOptions = "im", [Optional] Timeout = "10")
+		+ Parameters:
+			++ Source: The base String/Text/Source to Do Regex on.
+			++ Pattern: A .NET Based Regex Pattern
+			++ RegexOptions: [Optional] Regex Options to set to Regex, Supported Options:
+					> "i" = Ignore Case
+					> "m" = Multi Line
+					> "s" = Single Line
+			++ TimeOut: [Optional] A time-out interval, or "-1" to indicate that the method should not time out
+			
+	* RegexMatches
+		~ Description: Get/Extract All Texts matched by the provided Regex .NET Based Pattern
+		- 'RegexMatches' Usage: regexmatches(Source, Pattern, TextToAddBeforeEachMatch, [Optional] AdditionalExpression = null, [Optional] RegexOptions = "im", [Optional] Timeout = "10")
+		+ Parameters:
+			++ Source: The base String/Text/Source to Do Regex on.
+			++ Pattern: A .NET Based Regex Pattern
+			++ TextToAddBeforeEachMatch: An String/Text to add Before Each Match, put "\n" for new line and nothing else. '_Counter_' will be replaced with the matched item Index (A Counter) like:
+					regexmatches($stage3responsesource#, "(?<=chr(double quotes)keychr(double quotes): chr(double quotes).*[\s]+chr(double quotes)expire_timechr(double quotes): )(\d+)", "\nExpires on #_Counter_: ", unixtimetodate(this))
+			++ AdditionalExpression: Function/Expression to execute for each value, represent the value by 'this', like:
+					regexmatches($stage1responsesource#, "(?<=chr(double quotes)keychr(double quotes): chr(double quotes).*[\s]+chr(double quotes)expire_timechr(double quotes): )(\d+)", "\nExpires on: ", unixtimetodate(this))					
+			++ RegexOptions: [Optional] Regex Options to set to Regex, Supported Options:
+					> "i" = Ignore Case
+					> "m" = Multi Line
+					> "s" = Single Line
+			++ TimeOut: [Optional] A time-out interval, or "-1" to indicate that the method should not time out
+					
+	* RegexReplace
+		~ Description: Replace Texts matched by the provided Regex .NET Based Pattern with provided Replacement string
+		- 'RegexReplace' Usage: regexreplace(Source, Pattern, Replacement, [Optional] RegexOptions = "im", [Optional] Timeout = "10", [Optional] Count)
+		+ Parameters:
+			++ Source: The base String/Text/Source to Do Regex Replace on.
+			++ Pattern: A .NET Based Regex Pattern
+			++ Replacement: The replacement string
+			++ RegexOptions: [Optional] Regex Options to set to Regex, Supported Options:
+					> "i" = Ignore Case
+					> "m" = Multi Line
+					> "s" = Single Line
+			++ TimeOut: [Optional] A time-out interval, or "-1" to indicate that the method should not time out
+			++ Count: [Optional] Maximum number of times the replacement can occur.
+			
+		
+Mathematics:
+	* Addition
+		~ Description: Addition
+		- 'Addition' Usage: Number1 + Number2
+		+ Example:
+			"5" + "5"
+		
+	* Subtraction
+		~ Description: Subtraction
+		- 'Subtraction' Usage: Number1 - Number2
+		+ Example:
+			"5" - "5"
+			
+	* Division 
+		~ Description: Division
+		- 'Division' Usage: Number1 / Number2
+		+ Example:
+			"5" / "5"
+
+	* Modulus 
+		~ Description: The % operator computes the remainder after dividing its first operand by its second
+		- 'Modulus' Usage: Number1 % Number2
+		+ Example:
+			"5" % "5"
+			
+	* Multiplication 
+		~ Description: Multiplication
+		- 'Modulus' Usage: Number1 * Number2
+		+ Example:
+			"5" * "5"
+			
+	* Logical or bitwise XOR 
+		~ Description: Returns a specified number raised to the specified power.
+		- 'Modulus' Usage: Number1 ^ Number2
+		+ Example:
+			"5" ^ "5"	
+			
+	* Abs
+		~ Description: Returns the absolute value of a Decimal number.
+		- 'Abs' Usage: abs(Number)
+		+ Parameters:
+			++ Number: The number do the math on.
+			
+	* Ceil
+		~ Description: Returns the smallest integral value that is greater than or equal to the specified double-precision floating-point number.
+		- 'Ceil' Usage: ceil(Number)
+		+ Parameters:
+			++ Number: The number do the math on.
+			
+	* Floor
+		~ Description: Returns the largest integer less than or equal to the specified double-precision floating-point number.
+		- 'Floor' Usage: floor(Number)
+		+ Parameters:
+			++ Number: The number do the math on.
+			
+	* Round
+		~ Description: Rounds a decimal value to a specified number of fractional digits.
+		- 'Round' Usage: round(Number, Decimals)
+		+ Parameters:
+			++ Number: The number do the math on.
+			++ Decimals: The number of decimal places in the return value.
+			
+			
+Other Functions:
+	* UnixTime
+		~ Description: Return Current Timestamp (like: 1517516792.63398)
+		- 'UnixTime' Usage: unixtime()
+		
+	* UnixTimeToDate
+		~ Description: Converts Unix Timestamp to date, like: 2/28/2018
+		- 'UnixTimeToDate' Usage: unixtimetodate(UnixTimestamp)
+		+ Parameters:
+			++ UnixTimestamp: The Unix Timestamp to get converted to date.
+		
+	* If
+		~ Description: Returns one of two values depending on the value of the Boolean expression
+		- 'If' Usage: if(theBooleanToCheck, Then, Else)
+		+ Parameters:
+			++ theBooleanToCheck: The Boolean expression to check
+			++ Then: If the Boolean expression is true, Return Then value
+			++ Else: If the Boolean expression is false, Return Else value
+		
+		
+Crypto String Methods:
+	* MD5
+		~ Description: Encrypt an String/Text to MD5
+		- 'MD5' Usage: md5(strToHash)
+		+ Parameters: 
+			++ strToHash: The String/Text to be Hashed as MD5
+			
+	* SHA
+		~ Description: Encrypt an String To SHA-1/SHA-256/SHA-384/SHA-512
+		- 'SHA' Usage: sha(strToHash, ShaVersion)
+		+ Parameters:
+			++ strToHash: The String/Text to be Hashed as SHA
+			++ ShaVersion: A Number/Integer that determine the SHA Version, can be: "1" / "256" / "384" / "512"
+			
+	* HMAC
+		~ Description: Encrypt an String to HMAC with several hash types ("MD5" / "RIPEMD160" / "SHA1" / "SHA256" / "SHA384" / "SHA512")
+		- 'HMAC' Usage: hmac(strToHash, HashType, Key)
+		+ Parameters:
+			++ strToHash: The String/Text to be Hashed as HMAC
+			++ HashType: Hash Type, Supported Hash Types: "MD5" / "RIPEMD160" / "SHA1" / "SHA256" / "SHA384" / "SHA512"
+			++ Key: The key to use in the hash algorithm.
+		
+	* PBKDF2-HMAC-SHA256
+		~ Description: Encrypt an String to PBKDF2-HMAC-SHA256
+		- 'PBKDF2-HMAC-SHA256' Usage: pbkdf2hmacsha256(PasswordToHash, Salt, DKLen, IterationCount, ReturnAs)
+		+ Parameters:
+			++ PasswordToHash: The String Password To Hash
+			++ Salt: The Salt
+			++ DKLen: Key Length, A Number/Integer
+			++ IterationCount: Iterations, A Number/Integer
+			++ ReturnAs: "hex" or "base64", You choose the return.
+
+	* PBKDF2-PKCS5
+		~ Description: Encrypt an String to PBKDF2-PKCS5
+		- 'PBKDF2-PKCS5' Usage: pbkdf2pkcs5(PasswordToHash, Salt, DKLen, IterationCount, ReturnAs)
+		+ Parameters:
+			++ PasswordToHash: The String Password To Hash
+			++ Salt: The Salt
+			++ DKLen: Key Length, A Number/Integer
+			++ IterationCount: Iterations, A Number/Integer
+			++ ReturnAs: "hex" or "base64", You choose the return.

@@ -1,0 +1,444 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Woxy - Configuration Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[json]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">JSON</a>
+        </div>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#ConfigStyle" class="toc-h1 toc-link" data-title="ConfigStyle">Configuration Format</a>
+          </li>
+          <li>
+            <a href="#variables" class="toc-h1 toc-link" data-title="Variables">Variables</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#name" class="toc-h2 toc-link" data-title="Variable-Name">Name</a>
+                  </li>
+                  <li>
+                    <a href="#pattern" class="toc-h2 toc-link" data-title="Variable-Pattern">Pattern</a>
+                  </li>
+                  <li>
+                    <a href="#replace1" class="toc-h2 toc-link" data-title="Variable-Replace1">Replace1</a>
+                  </li>
+                  <li>
+                    <a href="#replace2" class="toc-h2 toc-link" data-title="Variable-Replace2">Replace2</a>
+                  </li>
+                  <li>
+                    <a href="#replace3" class="toc-h2 toc-link" data-title="Variable-Replace3">Replace3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Short Term Descriptions</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://woxy.xyz'>Documentation Powered by Woxy</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the documentation of Woxy, If you are wanting to make your own configurations rather than wait for one of our team to complete them then this is certainly what you should be reading.</p>
+
+<p>We are the first ever configurated email checker on the market, our configs are done in JSON and captured data is with REGEX.</p>
+
+<p>If you have read this documentation and still do not fully understand how to make a config, a config maker from our team can make you that config privatly for a small cost. You can join our <a href="https://discord.gg/erhEyPc" target="#">Discord</a> to contact our config making team there.</p>
+<h1 id='ConfigStyle'>Configuration Format</h1>
+<blockquote>
+<p>Format Style of Config Making:</p>
+</blockquote>
+<blockquote>
+<p>Config making requires basic knowledge of JSON & REGEX.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="kr">{
+  "General": {
+    "name": "",
+    "author": "",
+    "description": "",
+    "onceEnabled": "false"
+  },
+  "Capture": [
+    {
+      "targetEmail": "",
+      "variables": [
+        {
+          "name": "",
+          "pattern": "",
+          "replace1": "-|-",
+          "replace2": "-|-",
+          "replace3": "-|-"
+        }
+      ]
+    }
+  ]
+}</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>targetEmail</code> with the email you are searching for.</p>
+</blockquote>
+
+<p>So a lot of people requested some documentation on how to make configs for Woxy, The config's are formed with JSON pretty simple and easy to edit for newbies too.</p>
+
+<p>Firstly, you will need to find the target email you are looking to check for amd change the following like in the format show to the right hand side...</p>
+
+<p>From this code<code>"targetEmail": "",</code></p>
+
+<aside class="notice">
+to this code for example <code>"targetEmail": "email@facebook.com",</code> by changing it to this, Woxy will search for emails from Facebook.com.
+</aside>
+
+<p>So you are probably wondering what the other parts are that you need to fill in, don't worry we will explain that below.</p>
+
+<p><code>Name</code>, Will be the name of the config that will display in Woxy to initiate the config when you type it so for example you would change it to the following: <code>"name": "WoxyExample.com",</code> so this code will make the config name WoxyExample.com when you are typing the name of the config in the program.</p>
+
+<p>====================================================</p>
+
+<p><code>Author</code>, this is pretty self explanitory this is where you will type your own username / name to clarify you made the config so for example: <code>"author": "Dreamzje [ KEEPIT.ONLINE ]",</code>.</p>
+
+<p>====================================================</p>
+
+<p><code>Description</code>, you just place a simple discription of what the config does here, it will also display next to the name of the config in Woxy, so for example: <code>"description": "Test Format As Proof",</code>.</p>
+
+<p>====================================================</p>
+
+<aside class="notice">
+to this code for example <code>"targetEmail": "email@facebook.com",</code> by changing it to this, Woxy will search for emails from Facebook.com.
+</aside>
+<!-- Split between sections of code examples -->
+
+<h1 id='variables'>Variables</h1>
+<blockquote>
+<p>The following code is how a configuration should look when finished but remove the \ in the pattern and all of the replace sections of the code from the first span:</p>
+</blockquote>
+
+<pre class="highlight json tab-json"><code><span class="nf">{
+  "General": {
+    "name": "Venmo",
+    "author": "Dreamzje [ KEEPIT.ONLINE ]",
+    "description": "Capture Venmo Payments",
+	"onceEnabled": "false"
+  },
+  "Capture": [
+    {
+      "targetEmail": "venmo@venmo.com",
+      "variables": [
+		{
+          "name": "Payment",
+          "pattern": "<\span style=\"color:#009200;float:right;\">([^a]*)<\/span>",
+          "replace1": "<\span style=\"color:#009200;float:right;\">|-",
+          "replace2": "<\/span>|-",
+		  "replace3": "-|-"
+        }
+      ]
+    }
+  ]
+}</span>
+</code></pre>
+
+<!-- left hand side code behind -->
+
+<p>So now you're going to be wondering what the hell you do with the variables, don't worry because in this next step we will go through each section individually and explain which section of a variable does what.</p>
+
+<p>So let's behin with:</p>
+
+<p>====================================================</p>
+
+<p><code>Name</code>, this section is just the name of the section you are capturing, for example if I wanted to capture payments from the emails it would look like the following: <code>"name": "Payment",</code>.</p>
+
+<p>====================================================</p>
+
+<p><code>Pattern</code>, So here is where the regex101.com comes in handy as you will be using REGEX to capture the data from the .html format of an email, here we are going to parse the payment method from the email as like in the following: <code>"pattern": "<\span style=\"color:#009200;float:right;\">([^a]*)<\/span>",</code> I've had to add an extra \ in the initial span code for it to act as code within the site, you will not need to do this while creating an actual config.</p>
+
+<p>====================================================</p>
+
+<p><code>Replace1</code>, in this section we are just using replace to replace the html format that surrounds the REGEX code so it would leave us with just the regex parsed code like following: <code>"replace1": "<\span style=\"color:#009200;float:right;\">|-",</code> yet again like in the pattern I've had to add the extra \ in the span to make the code work on site without breaking into the html formats just ignore that. So what we have done here in the replace is copy the first part before the REGEX so the html format surrounding the REGEX and replaced it with nothing. As you noticed in the format example code in the format section of the docs it had <code>-|-</code> which replaced nothing with nothing here we replaced the first html before the regex with nothing.</p>
+
+<p>====================================================</p>
+
+<p><code>Replace2</code>, this section we are just going to do the same as <code>Replace1:</code> but this time backwards, we are going to replace the html code AFTER the REGEX this time so for instance as shown in the preview to the right <code>"replace2": "<\/span>|-",</code> We are replacing the end span with nothing, now this should leave us with just a pure capture now we have removed the html surrounding the REGEX so your outputted response should look something like this when it's capturing data now <code>Payment: £200</code>.</p>
+
+<p>====================================================</p>
+
+<p><code>Replace3</code>, The <code>Replace3</code> section is just incase you randomly get some html still showing in your capture for instance you have a html formatted BR or P or even a SPAN before or after your capture you can just use the third replace section to remove that extended html from the capture format so for instance If we have a random extra span before the capture we would change the Replace3 to the following, <code>"replace3": "<\/span>|-"</code> yet again removing the first \ from the span as it's not needed in the config just for me here as otherwise it would fuck with my html formats.</p>
+
+<aside class="success">
+Remember — Always test your REGEX first on regex101.com
+</aside>
+
+<!-- left hand code section split -->
+
+<aside class="warning">Will add a section to explain the <code>"onceEnabled": "false"</code> at a later date.</aside>
+
+<h1 id='errors'>Short Terms and Descriptions</h1>
+<aside class="notice">Here is a small table that describes all the sections and variables with name | desctiption for those who are too lazy to read the whole documentation.</aside>
+
+<table><thead>
+<tr>
+<th>Short Terms</th>
+<th>Short Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Name</td>
+<td>Configuration Name ( site name ).</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>Author of The Config's Name.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Small description of what the config does, what it captures.</td>
+</tr>
+<tr>
+<td>Once Enabled</td>
+<td>Will search for a certain email only once.</td>
+</tr>
+<tr>
+<td>targetEmail</td>
+<td>The email you are targeting to fetch emails from ( email@amazon.com, email@facebook.com ).</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Name of the variable. something you are trying to capture ( price, subscription, game, item, purchase ).</td>
+</tr>
+<tr>
+<td>Pattern</td>
+<td>The REGEX pattern match would be placed in this section ( regex101.com for testing).</td>
+</tr>
+<tr>
+<td>Replace1</td>
+<td>Here is where you would replace the html surrounding the REGEX code with nothing so for instance <code>HTML HERE |-</code>The | means a split and the - means replace with nothing.</td>
+</tr>
+<tr>
+<td>Replace2</td>
+<td>Here is where you would replace the html surrounding the REGEX code with nothing so for instance <code>HTML HERE |-</code>The | means a split and the - means replace with nothing.</td>
+</tr>
+<tr>
+<tr>
+<td>Replace3</td>
+<td>Here is where you would replace the html surrounding the REGEX code with nothing so for instance <code>HTML HERE |-</code>The | means a split and the - means replace with nothing.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">JSON</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

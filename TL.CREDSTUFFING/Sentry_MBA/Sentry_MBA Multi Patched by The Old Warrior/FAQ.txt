@@ -1,0 +1,27 @@
+MBA FAQ
+Q) When i run OCR in Tesseract mode, i always get "Image not recognized" error regardless of the captcha.
+A) This means that MBA was unable to load Tess.dll. Tess.dll requires msvcr90.dll and msvcp90.dll. These DLLs comes with Microsoft Visual C++ 2008 Runtme. So the solution is simple: go to the Microsoft site and download the Runtime package.
+
+Q) As soon as i try to recognize an image in Tesseract mode, MBA suddenly closes without error messages.
+A) Then maybe you have installed Tesseract 3.0. Removing Tesseract 3.0 does not solve the problem. You need instead to open the Environment variables panel (from control panel -> system -> advanced settings), remove the Environment variable TESSDATA_PREFIX and finally restart your system.
+Moreover you can get this behaviour if the OCR profile you loaded uses a language file not available in Tessdata directory located in MBA root. In this case just try switching the language file and check if your Tessdata directory is corrupted, i.e. try redownloading MBA.
+
+Q) When i start bruteforcing, after some time i get only "404 - TCP connection timeout" errors.
+A) Then maybe your OS is limiting the maximum number of half open TCP connection. In order to work properly, MBA need this limit to be turned off. Limit on half open TCP connections has been implemented by Microsoft on the following OS:
+WIndows XP SP2
+Windows XP SP3
+Windows Vista
+Windows Vista SP1
+If you have one of these OS, then you need to remove this limit. You can quickly found how to patch your OS by asking your friend Google ;)
+Also be sure that you don't have an active firewall that can interfere with MBA. Sometimes allowing MBA in the firewall rules is not enough. In these cases you have to completely remove the firewall, i.e. use a better firewall :P
+And finally be sure that your connection is compatible with the number of bots you're using. Some crappy connections and/or routers will cause MBA to not work properly.
+
+Q) I need to edit file x.ini of MBA. Can you explain to me the format of this file?
+A) Nope. You're not supposed to edit and/or open any .ini file that can be found under MBA root. By doing so you can cause a program crash and/or loss of data.
+
+Q) In MBA there is this fucking flickering. Can you fix it?
+A) In order to minimize graphic corruption under Vista/Seven, i used some tricks -> flickering is the downside. I was forced to do things this way since the compiler i'm using is pretty old. I don't know when/if i'll upgrade compiler.
+Anyway you can stop the flickering by following these instructions:
+- If you're under Windows 2000/XP just uncheck the option "Enable Vista/Seven Refresh Mode" under "General Settings" frame.
+- If you're under Windows Viista/Seven uncheck the option "Enable Vista/Seven Refresh Mode" under "General Settings" frame, close the program, right click on .exe, select Compatibility tab and check disable visual themes. DO NOT enable compatibility mode.
+
